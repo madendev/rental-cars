@@ -1,11 +1,4 @@
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
@@ -32,15 +25,7 @@ export default function RootLayout({
       <html lang="es">
         <body className={`${outfit.variable} antialiased`}>
           <NextTopLoader color="#000" />
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <SignedOut>
-              <SignInButton />
-              <SignUpButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
+
           {children}
         </body>
       </html>
